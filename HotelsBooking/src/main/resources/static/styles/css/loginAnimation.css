@@ -1,0 +1,46 @@
+p {
+    color: rgba(255, 255, 255, 0.75);
+    font-family: "Special Elite", monospace;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 520px;
+    font-size: 2em;
+    opacity: 100%;
+    animation: typing 2s steps(60, end);
+}
+.parent{
+    width: 200px;
+}
+
+p:nth-child(2){
+    animation: typing-2 4s steps(60, end);
+
+}
+
+p:nth-child(3){
+    animation: typing-2 6s steps(60, end);
+
+}
+
+@media screen and (min-width: 601px) {
+    p {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    p {
+        font-size: 27px;
+    }
+}
+
+@keyframes typing{
+    from {width: 0;}
+}
+
+@keyframes typing-2 {
+    0% {width: 0;}
+    50% {width: 0;}
+}
+

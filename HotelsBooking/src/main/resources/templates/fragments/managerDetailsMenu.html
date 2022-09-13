@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager details menu</title>
+</head>
+<body>
+<div class="col-12 col-lg-3" th:fragment="managerDetailsMenu">
+    <div class="container-fluid manager-menu">
+        <div class="container-fluid inner-manager-menu">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a class="link-flash"
+                       th:href="@{/manager/update-hotel-data}">
+                        <h1 class="lead menu-text">
+                            <span class="iconify" data-icon="fluent:dual-screen-update-20-filled"></span> Update
+                            hotel data
+                        </h1>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a class="link-flash"
+                       th:href="@{/manager/all-apartments}">
+                        <h1 class="lead menu-text">
+                            <span class="iconify" data-icon="fluent:conference-room-28-regular"></span> All
+                            apartments
+                        </h1>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a class="link-flash"
+                       th:href="@{/manager/add-apartment}">
+                        <h1 class="lead menu-text">
+                            <span class="iconify" data-icon="carbon:add-alt"></span> Add new apartment
+                        </h1>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a class="link-flash"
+                       th:href="@{/manager/hotel-bookings}">
+                        <h1 class="lead menu-text">
+                            <span class="iconify" data-icon="simple-line-icons:calender"></span> Bookings
+                        </h1>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

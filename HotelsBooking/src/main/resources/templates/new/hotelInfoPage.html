@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/css/hotelPage.css">
+    <link rel="stylesheet" href="resources/css/userDropdownMenu.css">
+    <link rel="stylesheet" href="resources/css/background.css">
+    <title>Main post page</title>
+</head>
+<body>
+<!--header-->
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-sm">
+        <a href="#" class="navbar-brand">Navbar</a>
+        <div class="menu">
+            <div class="title" onclick="f()">John Doe <span class="fa fa-bars"></span>
+                <div class="arrow"></div>
+            </div>
+            <div class="dropdown">
+                <a class="link-flash" href="#"><p>Profile</p><span class="fa fa-bars"></span></a>
+                <a class="link-flash" href="#"><p>Booking history<span class="fa fa-bars"></span></p></a>
+                <a class="link-flash" href="#"><p>Register hotel</p><span class="fa fa-bars"></span></a>
+                <a class="link-flash" href="#"><p>Sign out</p><span class="fa fa-bars"></span></a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid name-info">
+    <div class="row">
+        <div class="col-12">
+            <div class="container-fluid info-into">
+                <div class="row">
+                    <div class="col-12 col-lg-2 line">
+                        <h5>Rating:</h5>
+                        <h5>
+                            <span class="iconify" data-icon="emojione:star"></span>
+                        </h5>
+                    </div>
+                    <div class="col-12 col-lg-7 line">
+                        <h4>Hilton</h4>
+                        <h6>Pushkina street,
+                            house 12,
+                            building 7</h6>
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <h5>Price from 1000$</h5>
+                        <a href="#bottom" class="btn btn-primary">Show rooms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid con-slider">
+    <div class="row">
+        <div class="col-12 col-lg-4  form-slider">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to="0" class="active" aria-current="true"
+                            aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?ca=6&ce=1&s=1024x768"
+                             class="d-block w-100" alt="hotel" style="width: 300px;height: 400px">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg"
+                             class="d-block w-100" alt="hotel" style="width: 300px;height: 400px">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2022/04/12/1329/MUMGH-P0765-Inner-Courtyard-Hotel-Exterior-Evening.jpg/MUMGH-P0765-Inner-Courtyard-Hotel-Exterior-Evening.16x9.jpg"
+                             class="d-block w-100" alt="hotel" style="width: 300px;height: 400px">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button"
+                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button"
+                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-12 col-lg-8 form-filter">
+            <div class="row info-into">
+                <div class="col-12 col-lg-6 line">
+                    <div class="filter">
+                        <h4>Search in this hotel:</h4>
+                        <select class="form-select input" aria-label="Example select with button addon">
+                            <option disabled selected>Single bad count</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="1">4</option>
+                            <option value="2">5</option>
+                            <option value="3">6</option>
+                            <option value="1">7</option>
+                            <option value="2">8</option>
+                            <option value="3">9</option>
+                        </select>
+                        <select class="form-select input" aria-label="Example select with button addon">
+                            <option disabled selected>Double bad count</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="1">4</option>
+                            <option value="2">5</option>
+                            <option value="3">6</option>
+                            <option value="1">7</option>
+                            <option value="2">8</option>
+                            <option value="3">9</option>
+                        </select>
+
+                        <div class="row">
+                            <div class="col-1">
+                                <h6>Price:</h6>
+                            </div>
+                            <div class="col-11 price-input">
+                                <div class="container">
+                                    <div class="filter-item__range">
+                                        <div class="multi-range">
+                                            <input type="range" min="100" max="4430" value="100" class="lower"
+                                                   aria-label="">
+                                            <input type="range" min="100" max="4430" value="1300" class="upper"
+                                                   aria-label="">
+                                        </div>
+                                        <div class="result">
+                                            <p>$<span class="result-l">100</span></p>
+                                            <p>$<span class="result-u">1300</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="date" class="form-control input" placeholder="Check-in"
+                               aria-label="Check-in"
+                               aria-describedby="button-addon2">
+                        <input type="date" class="form-control input" placeholder="Check-out"
+                               aria-label="Check-out"
+                               aria-describedby="button-addon2">
+                        <button class="btn btn-primary input">Search rooms</button>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="filter">
+                        <h5>
+                            Total price: <span id="sum">0</span>$
+                            <input id="total" name="total" type="hidden" value="">
+                        </h5>
+                        <button class="btn btn-primary">Booking these rooms now!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a name="bottom"></a>
+<div class="container-fluid con-rooms">
+    <div class="row rooms-inner">
+        <div class="col-12 col-lg-3 line">
+            <h3 class="text-block">Double</h3>
+            <h4>Comfort:</h4>
+            <h5><span class="iconify" data-icon="fluent:tv-usb-24-regular"></span>TV</h5>
+            <h5><span class="iconify" data-icon="iconoir:air-conditioner"></span>Conditioner</h5>
+            <h5><span class="iconify" data-icon="carbon:bar"></span>Mini bar</h5>
+            <h5><span class="iconify" data-icon="gg:smart-home-refrigerator"></span>Refrigerator</h5>
+            <h5><span class="iconify" data-icon="mdi:balcony"></span>Balcony</h5>
+            <h5><span class="iconify" data-icon="cil:bathroom"></span>Jacuzzi</h5>
+            <h5><span class="iconify" data-icon="ic:outline-free-breakfast"></span>Breakfast</h5>
+            <h5><span class="iconify" data-icon="akar-icons:wifi"></span>Wi-fi</h5>
+            <h5><span class="iconify" data-icon="bx:taxi"></span>Transfer</h5>
+            <h5><span class="iconify" data-icon="fa-solid:parking"></span>Parking</h5>
+        </div>
+        <div class="col-12 col-lg-3 line">
+            <h3 class="text-block">Sleeps:</h3>
+            <h4>
+                Adults:
+                <span class="iconify" data-icon="akar-icons:person"></span>
+            </h4>
+            <h6>
+                Children:
+                <span class="iconify" data-icon="akar-icons:person"></span>
+            </h6>
+        </div>
+        <div class="col-12 col-lg-3 line">
+            <h3 class="text-block">
+                Price: 2000$ from 2 nights
+            </h3>
+            <h6>Includes taxes and charges</h6>
+        </div>
+        <div class="col-12 col-lg-3">
+            <div class="form-check text-block">
+                <input class="form-check-input" type="checkbox"
+                       value="2000"
+                       onClick="calculate(this);" id="flexCheckDefault" autocomplete="off">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Choose this room
+                </label>
+            </div>
+            <br>
+            <a class="btn btn-primary" href="#">Go to booking</a>
+        </div>
+    </div>
+</div>
+<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="resources/js/hotelPage.js"></script>
+<script src="resources/js/userPage.js"></script>
+<script src="resources/js/bootstrap.js"></script>
+</body>
+</html>

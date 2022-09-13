@@ -1,0 +1,21 @@
+#btn-reg-hot {
+    margin-left: 10px;
+}
+
+#btn-reg {
+    margin-left: 10px;
+}
+
+#btn-log {
+    margin-left: 10px;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}

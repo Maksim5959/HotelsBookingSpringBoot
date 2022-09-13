@@ -1,0 +1,86 @@
+#btn-reg-hot {
+    margin-left: 10px;
+}
+
+#btn-reg {
+    margin-left: 10px;
+}
+
+#btn-log {
+    margin-left: 10px;
+}
+
+/* -------------------- */
+
+.search {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+    0 10px 10px rgba(0,0,0,0.22);
+    max-width: 96%;
+    height: 430px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.result {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+    0 10px 10px rgba(0,0,0,0.22);
+    width: auto;
+    max-width: 100%;
+    min-height: auto;
+    margin-bottom: 10px;
+}
+
+.result-header{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+    0 10px 10px rgba(0,0,0,0.22);
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: 10px;
+}
+
+.search-group{
+    margin-top: 144px;
+}
+
+.search-inner{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.btn-search{
+    width: 100%;
+}
+
+.btn-group{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 35px;
+}
+.hed-text{
+    padding: 5px 0 0 10px;
+}
+
+.result-info{
+    margin-top: 20px;
+}
+
+.form-check{
+    margin: 5px auto 0 10px;
+}
+
+.filter-links{
+    padding: 0 20px 0 0;
+}
+
+.filter-links-group{
+    margin: 1px -10px 0 -20px;
+}
+
+
+

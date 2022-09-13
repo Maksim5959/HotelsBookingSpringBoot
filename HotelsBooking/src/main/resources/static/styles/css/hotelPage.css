@@ -1,0 +1,178 @@
+.name-info {
+    margin: 144px auto auto auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    width: auto;
+    max-width: 80%;
+    min-height: 75px;
+}
+
+.info-into {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    position: relative;
+    width: auto;
+    max-width: 98%;
+    min-height: 98%;
+}
+
+.con-slider {
+    max-width: 80%;
+}
+
+.form-slider {
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    min-height: 400px;
+}
+
+.form-filter {
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    min-height: 400px;
+}
+
+.filter{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.input{
+    margin-bottom: 10px;
+}
+.con-rooms{
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    width: auto;
+    max-width: 80%;
+    min-height: 200px;
+}
+
+.rooms-inner{
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    padding: 10px;
+    min-height: 180px;
+}
+
+.text-block{
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 1248px) {
+    .form-slider {
+        max-width: 33%;
+    }
+
+    .form-filter {
+        max-width: 66%;
+        margin-left: 10px;
+    }
+}
+
+
+@media screen and (max-width: 1247px) {
+    .form-slider , .form-filter{
+        max-width: 100%;
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 961px) {
+    .line {
+        border-right: 2px solid rgba(0, 0, 0, 0.50);
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .line {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.50);
+    }
+}
+
+
+/*multi cursors range styles*/
+.filter-item__range input[type=range] {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    margin: 0;
+    padding: 0 2px;
+    overflow: hidden;
+    border: 0;
+    border-radius: 1px;
+    outline: none;
+    background: linear-gradient(#dbdbdb, grey) no-repeat center;
+    background-size: 100% 2px;
+    pointer-events: none;
+}
+.filter-item__range input[type=range]:active, .filter-item__range input[type=range]:focus {
+    outline: none;
+}
+.filter-item__range input[type=range]::-webkit-slider-thumb {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.28);
+    background: #dbdbdb;
+    position: relative;
+    margin: 5px 0;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    pointer-events: all;
+    z-index: 2;
+}
+.filter-item__range input[type=range]::-webkit-slider-thumb::before {
+    content: " ";
+    display: block;
+    position: relative;
+    top: 13px;
+    left: 100%;
+    width: 2000px;
+    height: 2px;
+    background: #1bae73;
+}
+.filter-item__range .multi-range {
+    position: relative;
+    height: 25px;
+}
+.filter-item__range .multi-range input[type=range] {
+    position: absolute;
+}
+.filter-item__range .multi-range input[type=range]:nth-child(1)::-webkit-slider-thumb::before {
+    background-color: #1bae73;
+}
+.filter-item__range .multi-range input[type=range]:nth-child(2) {
+    background: none;
+}
+.filter-item__range .multi-range input[type=range]:nth-child(2)::-webkit-slider-thumb::before {
+    background-color: #979797;
+}
+.filter-item__range .result {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto -8px auto;
+}

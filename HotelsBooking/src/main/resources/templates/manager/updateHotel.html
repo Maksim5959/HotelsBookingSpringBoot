@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles/css/bootstrap.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/css/hotelManager.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/css/background.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/css/userDropdownMenu.css}" type="text/css">
+    <title>Update hotel</title>
+</head>
+<body>
+<div th:replace="fragments/header::header"></div>
+<div class="container-lg top-manager-container">
+    <div class="row">
+        <div th:replace="fragments/managerDetailsMenu::managerDetailsMenu"></div>
+        <div class="col-12 col-lg-9">
+            <div class="container-fluid manage-result-con">
+                <div class="container-fluid inner-manage-result-con">
+                    <form th:action="@{/manager/update-hotel}" th:method="post" th:object="${hotel}">
+                        <h4>Hotel information:</h4>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-floating">
+                                    <input th:field="*{legalName}" type="text" class="form-control" id="legalName" placeholder="Legal name*"
+                                           required>
+                                    <label for="legalName">Legal name*</label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-floating">
+                                    <input th:field="*{brand}" type="text"
+                                           class="form-control" id="brand" placeholder="Brand*" required>
+                                    <label for="brand">Brand*</label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-floating">
+                                    <select th:field="*{stars}" id="rating1" class="form-select form-select-lg mb-3"
+                                            aria-label="Default select example" required>
+                                        <option th:selected="${hotel.stars == T(com.chuyashkou.hotels_booking.model.Stars).ONE}" value="ONE">1</option>
+                                        <option th:selected="${hotel.stars == T(com.chuyashkou.hotels_booking.model.Stars).TWO}" value="TWO">2</option>
+                                        <option th:selected="${hotel.stars == T(com.chuyashkou.hotels_booking.model.Stars).THREE}" value="THREE">3</option>
+                                        <option th:selected="${hotel.stars == T(com.chuyashkou.hotels_booking.model.Stars).FOUR}" value="FOUR">4</option>
+                                        <option th:selected="${hotel.stars == T(com.chuyashkou.hotels_booking.model.Stars).FIVE}" value="FIVE">5</option>
+                                    </select>
+                                    <label for="rating1">Rating</label>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Hotel address:</h4>
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="form-floating">
+                                    <input th:field="*{address.country}"
+                                           type="text" class="form-control" id="country" placeholder="Country*"
+                                           required>
+                                    <label for="country">Country*</label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-floating">
+                                    <input th:field="*{address.city}"
+                                           type="text" class="form-control" id="city" placeholder="City*" required>
+                                    <label for="city">City*</label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-floating">
+                                    <input th:field="*{address.street}"
+                                           type="text" class="form-control" id="street" placeholder="Street*" required>
+                                    <label for="street">Street*</label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-floating">
+                                    <input th:field="*{address.house}"
+                                           type="text" class="form-control" id="house" placeholder="House*" required>
+                                    <label for="house">House*</label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-floating">
+                                    <input th:field="*{address.building}"
+                                           type="text" class="form-control" id="building" placeholder="Building*"
+                                           required>
+                                    <label for="building">Building*</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-floating">Update hotel</button>
+                        <a href="#"
+                           class="btn btn-danger form-floating">Delete hotel</a>
+                        <div class="alert alert-danger alert-hotel-manager" role="alert" th:if="${updateError}">
+                            <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Hotel update error!
+                        </div>
+                        <div class="alert alert-danger alert-hotel-manager" role="alert" th:if="${deleteError}">
+                            <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Hotel delete error!
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/background::background"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+<script th:src="@{/styles/js/logout.js}" type="text/javascript"></script>
+<script th:src="@{/styles/js/userPage.js}" type="text/javascript"></script>
+<script th:src="@{/styles/js/bootstrap.js}" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+.top-hotel-registration-container{
+    margin-top: -60px;
+}
+
+.login-form{
+    margin: 144px auto auto auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+    0 10px 10px rgba(0,0,0,0.22);
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    max-width: 85%;
+    min-height: 910px;
+
+}
+.inner-form1{
+    background: white;
+    margin: auto auto auto auto;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    min-height: inherit;
+}
+
+.inner-form2 {
+    background: linear-gradient(to bottom right, #0d6efd, pink);
+    margin: auto auto auto auto;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    min-height: inherit;
+}
+.text-container{
+    padding-top: 13px;
+}
+
+.email {
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
+
+.info{
+    margin-bottom: 5%;
+}
+
+.alert-danger-hotel-custom{
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 961px) {
+    .inner-form2 {
+        min-height: inherit;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .inner-form2 {
+        min-height: 200px;
+    }
+}

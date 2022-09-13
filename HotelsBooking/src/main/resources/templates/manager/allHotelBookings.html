@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles/css/bootstrap.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/css/hotelManager.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/css/background.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/css/userDropdownMenu.css}" type="text/css">
+    <title>Hotel bookings</title>
+</head>
+<body>
+<div th:replace="fragments/header::header"></div>
+<div class="container-lg top-manager-container">
+    <div class="row">
+        <div th:replace="fragments/managerDetailsMenu::managerDetailsMenu"></div>
+        <div class="col-12 col-lg-9">
+            <div class="container-fluid manage-result-con">
+                <div class="container-fluid inner-manage-result-con">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Room name</th>
+                            <th scope="col">Check in date</th>
+                            <th scope="col">Check out date</th>
+                            <th scope="col">Personal data</th>
+                            <th scope="col">Confirm</th>
+                            <th scope="col">Cancel</th>
+                        </tr>
+                        </thead>
+                        <tbody th:each="booking, i:${bookings}">
+                        <tr>
+                            <th scope="row" th:text="${booking.apartment.name}"></th>
+                            <td th:text="${booking.dateIn}"></td>
+                            <td th:text="${booking.dateOut}"></td>
+                            <td>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" th:attr="data-bs-target='#exampleModal'+ ${i.index}">
+                                    <span class="iconify" data-icon="carbon:user-avatar"></span> Personal data
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" th:id="exampleModal + ${i.index}" tabindex="-1"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">User personal data</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h6 th:text="'Firstname: ' + ${booking.user.firstName}"></h6>
+                                                <h6 th:text="'Lastname: ' + ${booking.user.lastName}"></h6>
+                                                <h6 th:text="'Email: ' + ${booking.user.email}"></h6>
+                                                <h6 th:text="'Phone number: ' + ${booking.user.phoneNumber}"></h6>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <a href="#"
+                                   class="btn btn-success"><span class="iconify"
+                                                                 data-icon="line-md:confirm-circle"></span>
+                                    Confirm booking
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#"
+                                   class="btn btn-danger" disabled><span class="iconify"
+                                                                         data-icon="material-symbols:cancel-outline"></span>
+                                    Cancel booking
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="alert alert-danger alert-admin" role="alert" th:if="${deleteError}">
+                        <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Delete booking error!
+                    </div>
+                    <div class="alert alert-danger alert-admin" role="alert" th:if="${confirmError}">
+                        <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Confirm booking error!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/background::background"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+<script th:src="@{/styles/js/logout.js}" type="text/javascript"></script>
+<script th:src="@{/styles/js/userPage.js}" type="text/javascript"></script>
+<script th:src="@{/styles/js/bootstrap.js}" type="text/javascript"></script>
+</body>
+</html>

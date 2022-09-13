@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/css/userDropdownMenu.css">
+    <link rel="stylesheet" href="resources/css/bookingPage.css">
+    <link rel="stylesheet" href="resources/css/background.css">
+    <title>Main post page</title>
+</head>
+<body>
+<!--header-->
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-sm">
+        <a href="#" class="navbar-brand">Navbar</a>
+        <div class="menu">
+            <div class="title" onclick="f()">John Doe <span class="fa fa-bars"></span>
+                <div class="arrow"></div>
+            </div>
+            <div class="dropdown">
+                <a class="link-flash" href="#"><p>Profile</p><span class="fa fa-bars"></span></a>
+                <a class="link-flash" href="#"><p>Booking history<span class="fa fa-bars"></span></p></a>
+                <a class="link-flash" href="#"><p>Register hotel</p><span class="fa fa-bars"></span></a>
+                <a class="link-flash" href="#"><p>Sign out</p><span class="fa fa-bars"></span></a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-lg parent-container">
+    <div class="row">
+        <div class="col-12 col-lg-5">
+            <div class="container-fluid booking-rooms-info">
+                <div class="container inner-booking-rooms-info">
+                    <h4>Your booking details:</h4>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5>Chek-in</h5>
+                        </div>
+                        <div class="col-6">
+                            <h5>Chek-out</h5>
+                        </div>
+                    </div>
+                    <div class="container-fluid line-bottom"></div>
+                    <div class="row">
+                        <div class="col-6 line-right">
+                            <h6>Mon 14-Aug-2022</h6>
+                            <h6>15:00 - 00:00</h6>
+                        </div>
+                        <div class="col-6">
+                            <h6>Mon 21-Aug-2022</h6>
+                            <h6>01:00 - 12:00</h6>
+                        </div>
+                    </div>
+                    <div class="container-fluid line-bottom"></div>
+                    <h5>Your selected:</h5>
+                    <div class="row">
+                        <div class="col-8"><h6>Standard queen room:</h6>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="room-price-text">
+                                $1000
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8"><h6>Standard queen room:</h6>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="room-price-text">
+                                $1000
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8"><h6>Standard queen room:</h6>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="room-price-text">
+                                $1000
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8"><h6>Standard queen room:</h6>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="room-price-text">
+                                $1000
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="container-fluid line-bottom"></div>
+                    <div class="row total-price-row">
+                        <div class="col-8">
+                            <h6>Total price from 7 nights:</h6>
+                        </div>
+                        <div class="col-4">
+                            <h6>$7000</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-7">
+            <div class="container-fluid booking-hotel-info">
+                <div class="container inner-booking-hotel-info">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?ca=6&ce=1&s=1024x768"
+                                 class="img-fluid" style="width: 200px;height: 200px" alt="...">
+                        </div>
+                        <div class="col-4">
+                            <h4>Hilton</h4>
+                            <h6>Pushkina street, house 12, building 7</h6>
+                            <h6>Rating:
+                                <span class="iconify" data-icon="emojione:star"></span>
+                                <span class="iconify" data-icon="emojione:star"></span>
+                                <span class="iconify" data-icon="emojione:star"></span>
+                                <span class="iconify" data-icon="emojione:star"></span>
+                                <span class="iconify" data-icon="emojione:star"></span>
+                            </h6>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Total price:</h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6>7000$</h6>
+                                </div>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1" checked>
+                                <label class="form-check-label" for="inlineRadio1">Without sale</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                       value="option2">
+                                <label class="form-check-label" for="inlineRadio2">Use promo-code</label>
+                            </div>
+                            <div id="hide" style="display:none;">
+                                <div class="col-auto">
+                                    <label for="promo" class="visually-hidden">Password</label>
+                                    <input type="text" class="form-control" id="promo" placeholder="PROMOCODE" required>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary mb-3">Confirm promo code</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid booking-hotel-info">
+                <div class="container inner-booking-hotel-info">
+                    <h4>Enter your details:</h4>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="firstname" placeholder="Firstname" required>
+                                <label for="firstname">Firstname*</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInput"
+                                       placeholder="name@example.com" required>
+                                <label for="floatingInput">Email address*</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="lastname" placeholder="Lastname" required>
+                                <label for="lastname">Lastname*</label>
+                            </div>
+                            <div class="form-floating">
+                                <input name="phone" type="tel" id="Phone" class="form-control info"
+                                       placeholder="+375290000000"
+                                       pattern="^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$" required/>
+                                <label for="Phone">Phone number*</label>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="form-floating">Enter your payment data:</h4>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="cardName" placeholder="Card name" required>
+                                <label for="cardName">Card name*</label>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="cardNumber" placeholder="0000111122223333"
+                                       pattern="^[0-9]{4}[0-9]{4}[0-9]{4}[0-9]{4}$" required>
+                                <label for="cardNumber">Card number*</label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="cvv" placeholder="CVV" required>
+                                <label for="cvv">CVV*</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary booking-button">Booking these rooms</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--    background-->
+<div id="particle-container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+</div>
+<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="resources/js/bookingPage.js"></script>
+<script src="resources/js/userPage.js"></script>
+<script src="resources/js/bootstrap.js"></script>
+</body>
+</html>

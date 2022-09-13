@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles/css/bootstrap.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/css/profilePage.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/css/userDropdownMenu.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/css/header.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/css/background.css}" type="text/css">
+    <title>Local data</title>
+</head>
+<body>
+<div th:replace="fragments/header::header"></div>
+<div class="container-lg top-user-container">
+    <div class="row">
+        <div th:replace="fragments/userDetailsMenu::userDetailsMenu"></div>
+        <div class="col-12 col-lg-9">
+            <div class="container-fluid manage-result-con">
+                <div class="container-fluid inner-manage-result-con">
+                    <form th:action="@{/user/local-data}" th:method="post" th:object="${address}">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                        <input type="hidden" th:name="userId" th:value="${session.user.id}"/>
+                        <input type="hidden" th:field="*{id}"/>
+                        <h4>User local data:</h4>
+                        <div class="row">
+                            <div class="col-4">
+<!--                                COUNTRY-->
+                                <div class="form-floating">
+                                    <input th:field="*{country}" type="text" class="form-control" id="country"
+                                           placeholder="Country*"
+                                           required>
+                                    <label for="country">Country*</label>
+                                </div>
+<!--                                HOUSE-->
+                                <div class="form-floating">
+                                    <input th:field="*{house}" type="text" class="form-control" id="house" placeholder="House*"
+                                           required>
+                                    <label for="house">House*</label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+<!--                                CITY-->
+                                <div class="form-floating">
+                                    <input th:field="*{city}" type="text" class="form-control" id="city" placeholder="City*"
+                                           required>
+                                    <label for="city">City*</label>
+                                </div>
+<!--                                BUILDING-->
+                                <div class="form-floating">
+                                    <input th:field="*{building}" type="text" class="form-control" id="building"
+                                           placeholder="Building*"
+                                           required>
+                                    <label for="building">Building*</label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+<!--                                STREET-->
+                                <div class="form-floating">
+                                    <input th:field="*{street}" type="text" class="form-control" id="street"
+                                           placeholder="Street*"
+                                           required>
+                                    <label for="street">Street*</label>
+                                </div>
+<!--                                APARTMENT NUMBER-->
+                                <div class="form-floating">
+                                    <input th:field="*{apartmentNumber}" type="text" class="form-control" id="apartmentNumber"
+                                           placeholder="Apartment number*"
+                                           required>
+                                    <label for="apartmentNumber">Apartment number*</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><span class="iconify" data-icon="heroicons-solid:save-as"></span>
+                            Save address</button>
+                        <a th:if="${session.user.address == null}" th:href="@{/user/local-data/{id}(id=${address.id})}" class="btn btn-danger disabled"><span class="iconify" data-icon="ep:delete"></span>
+                            Delete address</a>
+                        <a th:unless="${session.user.address == null}" th:href="@{/user/local-data/{id}(id=${address.id})}"
+                           onclick="return confirm('Are you sure you want to delete your address?')" class="btn btn-danger">
+                            <span class="iconify" data-icon="ep:delete"></span>
+                            Delete address</a>
+                        <div class="alert alert-danger alert-address-user" role="alert" th:if="${saveAddressError}">
+                            <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Save address error!
+                        </div>
+                        <div class="alert alert-danger alert-address-user" role="alert" th:if="${deleteAddressError}">
+                            <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Delete address
+                            error!
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/background::background"></div>
+<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script th:src="@{/styles/js/logout.js}" type="text/javascript"></script>
+<script th:src="@{/styles/js/userPage.js}" type="text/javascript"></script>
+<script th:src="@{/styles/js/bootstrap.js}" type="text/javascript"></script>
+</body>
+</html>

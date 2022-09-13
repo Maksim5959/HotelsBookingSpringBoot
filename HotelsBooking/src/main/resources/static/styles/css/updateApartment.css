@@ -1,0 +1,10 @@
+.top-update-container{
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+    max-width: 100%;
+    min-height: 200px;
+    height: 400px;
+}

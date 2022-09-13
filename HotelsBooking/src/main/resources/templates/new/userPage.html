@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/css/userDropdownMenu.css">
+    <link rel="stylesheet" href="resources/css/mainPage.css">
+    <link rel="stylesheet" href="resources/css/background.css">
+    <title>User page</title>
+</head>
+<body>
+<!--header-->
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-sm">
+        <a href="#" class="navbar-brand"><p>Navbar</p></a>
+        <div class="menu">
+            <div class="title" onclick="f()">John Doe <span class="fa fa-bars"></span>
+                <div class="arrow"></div>
+            </div>
+            <div class="dropdown">
+                <a class="link-flash" href="#"><p>Profile</p><span class="fa fa-bars"></span></a>
+                <a class="link-flash" href="#"><p>Booking history<span class="fa fa-bars"></span></p></a>
+                <a class="link-flash" href="#"><p>Register hotel</p><span class="fa fa-bars"></span></a>
+                <a class="link-flash" href="#"><p>Sign out</p><span  class="fa fa-bars"></span></a>
+            </div>
+        </div>
+    </div>
+</nav>
+<!--text-->
+<div id="text-folder" class="container-fluid bg-light">
+    <div class="text">
+        <h1>Find your next stay</h1>
+        <h3>Search low prices on hotels...</h3>
+    </div>
+</div>
+<!--searcher-->
+<div class="container-sm">
+    <div class="row">
+        <div class="input-win">
+            <div class="input-group  mb-3">
+                <input type="text" class="form-control" placeholder="Where are you going?"
+                       aria-label="Where are you going?" aria-describedby="button-addon2">
+                <input type="date" class="form-control" placeholder="Check-in" aria-label="Check-in"
+                       aria-describedby="button-addon2">
+                <input type="date" class="form-control" placeholder="Check-out" aria-label="Check-out"
+                       aria-describedby="button-addon2">
+                <select class="form-select" aria-label="Example select with button addon">
+                    <option selected>Adults</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <select class="form-select" aria-label="Example select with button addon">
+                    <option selected>Children</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <select class="form-select" aria-label="Example select with button addon">
+                    <option selected>Rooms</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+            </div>
+        </div>
+    </div>
+    <!--    background-->
+    <div id="particle-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="resources/js/userPage.js"></script>
+<script src="resources/js/bootstrap.js"></script>
+</body>
+</html>

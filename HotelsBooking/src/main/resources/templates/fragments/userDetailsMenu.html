@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User details menu</title>
+</head>
+<body>
+<div class="col-12 col-lg-3" th:fragment="userDetailsMenu">
+    <div class="container-fluid user-profile-menu">
+        <div class="container-fluid inner-user-menu">
+            <ul class="list-group">
+                <li class="list-group-item"><a class="link-flash" th:href="@{/user/personal-details}"><h1 class="lead menu-text">
+                    <span class="iconify" data-icon="bi:person-bounding-box"></span> Personal details</h1></a>
+                </li>
+                <li class="list-group-item"><a class="link-flash" th:href="@{/user/local-data}"><h1 class="lead menu-text">
+                    <span class="iconify" data-icon="entypo:address"></span> User local data</h1>
+                </a></li>
+                <li class="list-group-item"><a class="link-flash" th:href="@{/user/security}"><h1 class="lead menu-text">
+                    <span class="iconify" data-icon="arcticons:eset-security"></span> Security</h1></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

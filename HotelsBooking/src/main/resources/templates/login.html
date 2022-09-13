@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles/css/bootstrap.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/css/background.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{styles/css/loginPage.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{styles/css/header.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{styles/css/loginAnimation.css}" type="text/css">
+    <title>Login</title>
+</head>
+<body>
+<!--header-->
+<div th:replace="fragments/header::header"></div>
+<div class="container-flex">
+    <div class="row login-form">
+        <div class="col-12 col-lg-6 inner-form2">
+            <!--            animation-->
+            <div class="text-container">
+                <p class="parent registration-animation">Login</p>
+                <p class="registration-animation">on hotels booking</p>
+                <p class="registration-animation">service!</p>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 inner-form1">
+            <form action="#" th:action="@{/login}" method="post">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                <input type="hidden" name="command" value="login">
+                <div class="form-floating">
+                    <input type="email" name="username" class="form-control email" id="floatingInput" placeholder="name@example.com"
+                           required>
+                    <label for="floatingInput">Email address*</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" name="password" class="form-control password" id="password" placeholder="Password"
+                           required>
+                    <label for="password">Password*</label>
+                </div>
+                <div class="checkbox mb-3">
+                    <label>
+                        <input class="form-check-input show-password" type="checkbox"> Show password
+                    </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger custom-login-alert" role="alert">
+                        <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Invalid email or password!
+                    </div>
+                </div>
+                <div th:if="${param.logout}">
+                    <div class="alert alert-warning custom-login-alert" role="alert">
+                        <span class="iconify" data-icon="akar-icons:triangle-alert"></span> You have been logged out!
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--    background-->
+<div th:replace="fragments/background::background"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+<script th:src="@{/styles/js/login.js}" type="text/javascript"></script>
+<script th:src="@{/styles/js/bootstrap.js}" type="text/javascript"></script>
+</body>
+</html>

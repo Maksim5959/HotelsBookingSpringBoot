@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/css/searchHotels.css">
+    <link rel="stylesheet" href="resources/css/userDropdownMenu.css">
+    <link rel="stylesheet" href="resources/css/background.css">
+    <title>Main post page</title>
+</head>
+<body>
+<!--header-->
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-sm">
+        <a href="#" class="navbar-brand">Navbar</a>
+        <div class="menu">
+            <div class="title" onclick="f()">John Doe <span class="fa fa-bars"></span>
+                <div class="arrow"></div>
+            </div>
+            <div class="dropdown">
+                <a class="link-flash" href="#"><p>Profile</p><span class="fa fa-bars"></span></a>
+                <a class="link-flash" href="#"><p>Booking history<span class="fa fa-bars"></span></p></a>
+                <a class="link-flash" href="#"><p>Register hotel</p><span class="fa fa-bars"></span></a>
+                <a class="link-flash" href="#"><p>Sign out</p><span class="fa fa-bars"></span></a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-sm search-group">
+    <div class="row">
+        <div class="col-12 col-lg-3 search">
+            <h5 class="search-inner">Search</h5>
+            <input type="text" class="form-control search-inner" placeholder="Where are you going?"
+                   aria-label="Where are you going?" aria-describedby="button-addon2">
+            <input type="date" class="form-control search-inner" placeholder="Check-in" aria-label="Check-in"
+                   aria-describedby="button-addon2">
+            <input type="date" class="form-control search-inner" placeholder="Check-out" aria-label="Check-out"
+                   aria-describedby="button-addon2">
+            <select class="form-select search-inner" aria-label="Example select with button addon">
+                <option selected>Adults</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <select class="form-select search-inner" aria-label="Example select with button addon">
+                <option selected>Children</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <select class="form-select search-inner" aria-label="Example select with button addon">
+                <option selected>Rooms</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <button class="btn btn-primary search-inner btn-search" type="submit">Search</button>
+        </div>
+        <div class="col-12  col-lg-9">
+            <div class="result-header">
+                <h2 class="hed-text">Warsaw: 476 properties found</h2>
+                <div class="row">
+                    <div class="col-9">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1"
+                                   value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Price up</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2"
+                                   value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Price down</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio3"
+                                   value="option1">
+                            <label class="form-check-label" for="inlineRadio3">Name up</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio4"
+                                   value="option2">
+                            <label class="form-check-label" for="inlineRadio4">Name down</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio5"
+                                   value="option1">
+                            <label class="form-check-label" for="inlineRadio5">Rating up</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio6"
+                                   value="option2">
+                            <label class="form-check-label" for="inlineRadio6">Rating down</label>
+                        </div>
+                    </div>
+                    <div class="col-3 filter-links-group">
+                        <a id="clear-button" type="button" class="link-primary filter-links">Clear filters</a>
+                        <a href="#" type="button" class="link-primary filter-links">Apply filters</a>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4 col-12">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="0" class="active" aria-current="true"
+                                            aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?ca=6&ce=1&s=1024x768"
+                                             class="d-block w-100" alt="hotel" style="width: 300px;height: 300px">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg"
+                                             class="d-block w-100" alt="hotel" style="width: 300px;height: 300px">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2022/04/12/1329/MUMGH-P0765-Inner-Courtyard-Hotel-Exterior-Evening.jpg/MUMGH-P0765-Inner-Courtyard-Hotel-Exterior-Evening.16x9.jpg"
+                                             class="d-block w-100" alt="hotel" style="width: 300px;height: 300px">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-8 result-info">
+                            <a href="#" class="brand">
+                                <h5>Meblirovannye Komnaty Vorota Minska</h5>
+                            </a>
+                            <h6 class="address">ulitsa Kirova 1, Minsk</h6>
+                            <h6 class="address">rating 6.2</h6>
+                            <hr>
+                            <h4>Price: from 1000 $</h4>
+                            <hr>
+                            <a href="#">
+                                <h6>Enter the dates to see the current room rates</h6>
+                                <button class="btn btn-primary show-rooms-btn" type="submit">Show all rooms</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4 col-12">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="0" class="active" aria-current="true"
+                                            aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?ca=6&ce=1&s=1024x768"
+                                             class="d-block w-100" alt="hotel" style="width: 300px;height: 300px">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg"
+                                             class="d-block w-100" alt="hotel" style="width: 300px;height: 300px">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2022/04/12/1329/MUMGH-P0765-Inner-Courtyard-Hotel-Exterior-Evening.jpg/MUMGH-P0765-Inner-Courtyard-Hotel-Exterior-Evening.16x9.jpg"
+                                             class="d-block w-100" alt="hotel" style="width: 300px;height: 300px">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-8 result-info">
+                            <a href="#" class="brand">
+                                <h5>Meblirovannye Komnaty Vorota Minska</h5>
+                            </a>
+                            <h6 class="address">ulitsa Kirova 1, Minsk</h6>
+                            <h6 class="address">rating 6.2</h6>
+                            <hr>
+                            <h4>Price: from 1000 $</h4>
+                            <hr>
+                            <a href="#">
+                                <h6>Enter the dates to see the current room rates</h6>
+                                <button class="btn btn-primary show-rooms-btn" type="submit">Show all rooms</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="resources/js/searchHotels.js"></script>
+<script src="resources/js/userPage.js"></script>
+<script src="resources/js/bootstrap.js"></script>
+</body>
+</html>

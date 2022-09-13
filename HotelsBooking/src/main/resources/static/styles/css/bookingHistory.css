@@ -1,0 +1,22 @@
+.top-booking-history-con{
+    margin-top: 144px;
+}
+
+.booking-history-inner-con{
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+    max-width: 80%;
+    height: auto;
+}
+
+.inner-row-booking-history{
+    padding:10px 0 10px 0;
+}
+
+.not-found-text{
+    text-align: center;
+    color: gray;
+}
