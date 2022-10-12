@@ -19,8 +19,6 @@
                 <div class="container-fluid inner-manage-result-con">
                     <form th:action="@{/user/local-data}" th:method="post" th:object="${address}">
                         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-                        <input type="hidden" th:name="userId" th:value="${session.user.id}"/>
-                        <input type="hidden" th:field="*{id}"/>
                         <h4>User local data:</h4>
                         <div class="row">
                             <div class="col-4">
@@ -72,19 +70,12 @@
                         </div>
                         <button type="submit" class="btn btn-primary"><span class="iconify" data-icon="heroicons-solid:save-as"></span>
                             Save address</button>
-                        <a th:if="${session.user.address == null}" th:href="@{/user/local-data/{id}(id=${address.id})}" class="btn btn-danger disabled"><span class="iconify" data-icon="ep:delete"></span>
+                        <a th:if="${address == null}" th:href="@{/user/local-data/{id}(id=${address.id})}" class="btn btn-danger disabled"><span class="iconify" data-icon="ep:delete"></span>
                             Delete address</a>
-                        <a th:unless="${session.user.address == null}" th:href="@{/user/local-data/{id}(id=${address.id})}"
+                        <a th:unless="${address == null}" th:href="@{/user/local-data/{id}(id=${address.id})}"
                            onclick="return confirm('Are you sure you want to delete your address?')" class="btn btn-danger">
                             <span class="iconify" data-icon="ep:delete"></span>
                             Delete address</a>
-                        <div class="alert alert-danger alert-address-user" role="alert" th:if="${saveAddressError}">
-                            <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Save address error!
-                        </div>
-                        <div class="alert alert-danger alert-address-user" role="alert" th:if="${deleteAddressError}">
-                            <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Delete address
-                            error!
-                        </div>
                     </form>
                 </div>
             </div>

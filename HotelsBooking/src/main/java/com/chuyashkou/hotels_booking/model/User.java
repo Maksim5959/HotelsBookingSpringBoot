@@ -2,19 +2,19 @@ package com.chuyashkou.hotels_booking.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashSet;
 import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
 @Table(name = "users")
+@Entity
 public class User {
 
     @Id
@@ -56,10 +56,11 @@ public class User {
     @JoinColumn(name = "address_id")
     private Address address;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private Set<Booking> bookings = new HashSet<>();
-
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Hotel hotel;
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    @EqualsAndHashCode.Exclude
+    Set<Booking> bookings;
 }

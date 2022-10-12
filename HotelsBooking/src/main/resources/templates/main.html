@@ -17,7 +17,6 @@
 <!--text-->
 <div id="text-folder" class="container-fluid bg-light">
     <div class="text">
-        <h1 th:text="${#authorization.authentication.name}"></h1>
         <h1 class="display-5">Find your next stay </h1>
         <h3 class="display-6">Search low prices on hotels...</h3>
     </div>
@@ -26,15 +25,17 @@
 <div class="container-sm">
     <div class="row">
         <div class="input-win">
-            <form class="input-group  mb-3" action="#">
-                <input type="hidden" name="command" value="search_hotels">
-                <input type="text" name="city" class="form-control" placeholder="Where are you going?"
+            <form class="input-group  mb-3" th:action="@{/hotels-search-results}" th:method="post" th:object="${searchData}">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                <input type="hidden" th:name="hotelsFilter" value="DEFAULT">
+                <input type="text" th:field="*{city}" class="form-control" placeholder="Where are you going?"
                        aria-label="Where are you going?" aria-describedby="button-addon2" required>
-                <input type="date" name="dateIn" class="form-control" placeholder="Check-in" aria-label="Check-in"
+                <input type="date" th:field="*{dateIn}" class="form-control" placeholder="Check-in" aria-label="Check-in"
                        aria-describedby="button-addon2" id="check-in" required>
-                <input type="date" name="dateOut" class="form-control" placeholder="Check-out" aria-label="Check-out"
+                <input type="date" th:field="*{dateOut}" class="form-control" placeholder="Check-out" aria-label="Check-out"
                        aria-describedby="button-addon2" id="check-out" required>
-                <select class="form-select" aria-label="Example select with button addon" required>
+                <select class="form-select" th:name="adultsCount"
+                        aria-label="Example select with button addon" required>
                     <option value="" disabled selected>Adults</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -46,9 +47,9 @@
                     <option value="8">8</option>
                     <option value="9">9</option>
                 </select>
-                <select class="form-select" aria-label="Example select with button addon" required>
+                <select class="form-select" th:name="childrenCount" aria-label="Example select with button addon" required>
                     <option value="" disabled selected>Children</option>
-                    <option value="1">0</option>
+                    <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -59,7 +60,7 @@
                     <option value="8">8</option>
                     <option value="9">9</option>
                 </select>
-                <select class="form-select" aria-label="Example select with button addon" required>
+                <select class="form-select" th:name="roomsCount" aria-label="Example select with button addon" required>
                     <option value="" disabled selected>Rooms</option>
                     <option value="1">1</option>
                     <option value="2">2</option>

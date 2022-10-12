@@ -32,7 +32,7 @@
                             <td th:text="${apartment.price}"></td>
                             <td th:text="${apartment.category}"></td>
                             <td>
-                                <a href="#"
+                                <a th:href="@{/manager/all-apartments/{id}(id=${apartment.id})}"
                                    class="btn btn-danger"><span class="iconify" data-icon="ep:delete"></span>
                                     Delete room
                                 </a>
@@ -44,9 +44,10 @@
                                     <span class="iconify" data-icon="icon-park-outline:update-rotation"></span>
                                     Update room
                                 </button>
-
                                 <!-- Modal -->
-                                <form th:action="@{/manager/all-apartments}" th:method="post" th:object="${apartment}">
+                                <form th:action="@{/manager/all-apartments}" th:method="post">
+                                    <input type="hidden"  name="id" th:value="${apartment.id}">
+                                    <input type="hidden" name="comfort.id" th:value="${apartment.comfort.id}">
                                     <div class="modal fade" th:id="exampleModal + ${i.index}" tabindex="-1"
                                          aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
@@ -137,8 +138,8 @@
                                                     <div class="row">
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input  th:name="tv"
-                                                                        th:value="${apartment.comfort.tv}"
+                                                                <input  th:name="comfort.tv"
+                                                                        value="true"
                                                                         th:checked="${apartment.comfort.tv}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -149,20 +150,20 @@
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="conditioner"
-                                                                       th:value="${apartment.comfort.conditioner}"
+                                                                <input th:name="comfort.conditioner"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.conditioner}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
-                                                                       id="conditioner1" value="true">
+                                                                       id="conditioner1">
                                                                 <label class="form-check-label"
                                                                        for="conditioner1">conditioner</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="bar"
-                                                                       th:value="${apartment.comfort.bar}"
+                                                                <input th:name="comfort.bar"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.bar}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -175,8 +176,8 @@
                                                     <div class="row">
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="refrigerator"
-                                                                       th:value="${apartment.comfort.refrigerator}"
+                                                                <input th:name="comfort.refrigerator"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.refrigerator}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -187,8 +188,8 @@
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="balcony"
-                                                                       th:value="${apartment.comfort.balcony}"
+                                                                <input th:name="comfort.balcony"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.balcony}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -199,8 +200,8 @@
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="jacuzzi"
-                                                                       th:value="${apartment.comfort.jacuzzi}"
+                                                                <input th:name="comfort.jacuzzi"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.jacuzzi}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -213,8 +214,8 @@
                                                     <div class="row">
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="breakfast"
-                                                                       th:value="${apartment.comfort.breakfast}"
+                                                                <input th:name="comfort.breakfast"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.breakfast}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -225,8 +226,8 @@
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="wifi"
-                                                                       th:value="${apartment.comfort.wifi}"
+                                                                <input th:name="comfort.wifi"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.wifi}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -237,8 +238,8 @@
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="transfer"
-                                                                       th:value="${apartment.comfort.transfer}"
+                                                                <input th:name="comfort.transfer"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.transfer}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -251,8 +252,8 @@
                                                     <div class="row">
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="parking"
-                                                                       th:value="${apartment.comfort.parking}"
+                                                                <input th:name="comfort.parking"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.parking}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -263,8 +264,8 @@
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="swimmingPool"
-                                                                       th:value="${apartment.comfort.swimmingPool}"
+                                                                <input th:name="comfort.swimmingPool"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.swimmingPool}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -276,8 +277,8 @@
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="gym"
-                                                                       th:value="${apartment.comfort.gym}"
+                                                                <input th:name="comfort.gym"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.gym}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -290,8 +291,8 @@
                                                     <div class="row">
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="restaurant"
-                                                                       th:value="${apartment.comfort.restaurant}"
+                                                                <input th:name="comfort.restaurant"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.restaurant}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -302,8 +303,8 @@
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="pets"
-                                                                       th:value="${apartment.comfort.pets}"
+                                                                <input th:name="comfort.pets"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.pets}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -314,8 +315,8 @@
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-check form-check-inline">
-                                                                <input th:name="accessibilityFeatures"
-                                                                       th:value="${apartment.comfort.accessibilityFeatures}"
+                                                                <input th:name="comfort.accessibilityFeatures"
+                                                                       value="true"
                                                                        th:checked="${apartment.comfort.accessibilityFeatures}"
                                                                        class="form-check-input"
                                                                        type="checkbox"
@@ -341,12 +342,11 @@
                         </tr>
                         </tbody>
                     </table>
-                    <div class="alert alert-danger alert-hotel-manager" role="alert" th:if="${updateError}">
-                        <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Update apartment error!
-                        The apartment must not be booked!
+                    <div class="alert alert-danger alert-hotel-manager" role="alert" th:if="${saveError}">
+                        <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Apartment update error!
                     </div>
                     <div class="alert alert-danger alert-hotel-manager" role="alert" th:if="${deleteError}">
-                        <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Delete apartment error!
+                        <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Apartment delete error!
                     </div>
                 </div>
             </div>

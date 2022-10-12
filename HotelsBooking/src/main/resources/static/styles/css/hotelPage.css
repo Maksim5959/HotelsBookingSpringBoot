@@ -1,5 +1,9 @@
+.price-inputs{
+    margin-bottom: 10px;
+}
+
 .name-info {
-    margin: 144px auto auto auto;
+    margin: 70px auto auto auto;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),

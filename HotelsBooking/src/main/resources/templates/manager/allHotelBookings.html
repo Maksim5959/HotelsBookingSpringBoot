@@ -65,16 +65,18 @@
                                 </div>
                             </td>
                             <td>
-                                <a href="#"
-                                   class="btn btn-success"><span class="iconify"
-                                                                 data-icon="line-md:confirm-circle"></span>
+                                <a th:if="${booking.confirm}" th:href="@{/manager/hotel-bookings/confirm/{id}(id=${booking.id})}"
+                                   class="btn btn-success disabled"><span class="iconify" data-icon="line-md:confirm-circle"></span>
+                                    Confirm booking
+                                </a>
+                                <a th:unless="${booking.confirm}" th:href="@{/manager/hotel-bookings/confirm/{id}(id=${booking.id})}"
+                                   class="btn btn-success"><span class="iconify" data-icon="line-md:confirm-circle"></span>
                                     Confirm booking
                                 </a>
                             </td>
                             <td>
-                                <a href="#"
-                                   class="btn btn-danger" disabled><span class="iconify"
-                                                                         data-icon="material-symbols:cancel-outline"></span>
+                                <a th:href="@{/manager/hotel-bookings/{id}(id=${booking.id})}"
+                                   class="btn btn-danger" disabled><span class="iconify" data-icon="material-symbols:cancel-outline"></span>
                                     Cancel booking
                                 </a>
                             </td>
