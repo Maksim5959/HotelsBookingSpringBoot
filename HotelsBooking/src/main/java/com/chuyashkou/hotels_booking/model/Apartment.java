@@ -1,8 +1,6 @@
 package com.chuyashkou.hotels_booking.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -36,4 +34,9 @@ public class Apartment {
 
     @OneToOne(cascade = CascadeType.ALL, optional = false)
     private Comfort comfort;
+
+    @OneToMany
+    @JoinColumn(name = "apartment_id")
+    @EqualsAndHashCode.Exclude
+    Set<Booking> bookings;
 }

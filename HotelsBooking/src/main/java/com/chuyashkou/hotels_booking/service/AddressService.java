@@ -6,8 +6,12 @@ import java.util.Optional;
 
 public interface AddressService {
 
-    void deleteById(Long id);
+    Optional<Address> findById(Long id);
+
+    Optional<Address> findByUserId(Long userId);
 
     Optional<Address> findByCountryAndCityAndStreetAndHouseAndBuildingAndApartmentNumber(
             String country, String city, String street, String house, String building, String apartmentNumber);
+
+    void deleteById(Long id);
 }

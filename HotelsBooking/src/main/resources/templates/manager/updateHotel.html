@@ -16,7 +16,10 @@
         <div class="col-12 col-lg-9">
             <div class="container-fluid manage-result-con">
                 <div class="container-fluid inner-manage-result-con">
-                    <form th:action="@{/manager/update-hotel}" th:method="post" th:object="${hotel}">
+                    <form th:action="@{/manager/update-hotel-data}" th:method="post" th:object="${hotel}">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                        <input type="hidden" th:field="*{id}"/>
+                        <input type="hidden" th:field="*{address.id}"/>
                         <h4>Hotel information:</h4>
                         <div class="row">
                             <div class="col-4">
@@ -87,14 +90,16 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary form-floating">Update hotel</button>
-                        <a href="#"
-                           class="btn btn-danger form-floating">Delete hotel</a>
-                        <div class="alert alert-danger alert-hotel-manager" role="alert" th:if="${updateError}">
-                            <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Hotel update error!
+                        <button type="submit" class="btn btn-primary form-floating"
+                        onclick="return confirm('Are you sure you want to update hotel data?' +
+                         ' You will have to repeat the verification process!')">Update hotel</button>
+                        <a th:href="@{/manager/update-hotel-data/{id}(id=${hotel.id})}" class="btn btn-danger form-floating"
+                        onclick="return confirm('Are you sure you want to delete hotel?')" >Delete hotel</a>
+                        <div class="alert alert-danger alert-hotel-manager" role="alert" th:if="${saveError}">
+                            <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Hotel update error! Duplicate legal name or address!
                         </div>
                         <div class="alert alert-danger alert-hotel-manager" role="alert" th:if="${deleteError}">
-                            <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Hotel delete error!
+                            <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Hotel delete error! The hotel must not have bookings!
                         </div>
                     </form>
                 </div>

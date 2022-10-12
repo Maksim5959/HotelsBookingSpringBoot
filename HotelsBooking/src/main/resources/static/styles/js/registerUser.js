@@ -16,17 +16,3 @@ $('body').on('click', '.show-password', function(){
         $('#confirmPassword').attr('type','password')
     }
 });
-
-function validatePassword() {
-    const newPassword = document.querySelector('input[name=password]');
-    const regularExpression = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–{}:;',?/*~$^+=<>]).{8,50}$/;
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function (evt) {
-        evt.preventDefault();
-        if (!regularExpression.test(newPassword.value)) {
-            alert("password should contain at least one number and one special character");
-            return;
-        }
-        this.submit();
-    });
-}

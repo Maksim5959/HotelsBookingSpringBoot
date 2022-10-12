@@ -1,8 +1,6 @@
 package com.chuyashkou.hotels_booking.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -35,9 +33,9 @@ public class Booking {
     @Column(columnDefinition = "boolean default false", nullable = false)
     private boolean isConfirm;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Apartment apartment;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private  User user;
+    @ManyToOne
+    private User user;
 }

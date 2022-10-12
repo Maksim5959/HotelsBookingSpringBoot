@@ -24,14 +24,14 @@
     <div class="container-sm">
         <a th:href="@{/}" class="navbar-brand">HOTELS BOOKING</a>
         <div class="menu">
-            <div th:if="${session.user.gender.name() == 'MALE'}" class="title" onclick="f()">
+            <div th:if="${#authentication.principal.gender.name() == 'MALE'}" class="title" onclick="f()">
                 <span class="iconify" data-icon="et:profile-male"></span>
-                <span th:text="${session.user.firstName} + ' ' + ${session.user.lastName}"></span>
+                <span th:text="${#authentication.principal.firstName} + ' ' + ${#authentication.principal.lastName}"></span>
                 <div class="arrow"></div>
             </div>
-            <div th:if="${session.user.gender.name() == 'FEMALE'}" class="title" onclick="f()">
+            <div th:if="${#authentication.principal.gender.name() == 'FEMALE'}" class="title" onclick="f()">
                 <span class="iconify" data-icon="et:profile-female"></span>
-                <span th:text="${session.user.firstName} + ' ' + ${session.user.lastName}"></span>
+                <span th:text="${#authentication.principal.firstName} + ' ' + ${#authentication.principal.lastName}"></span>
                 <div class="arrow"></div>
             </div>
             <div class="dropdown">
@@ -41,20 +41,14 @@
                 <a class="link-flash" href="#">
                     <p th:text="Bookings" class="user-menu"></p>
                 </a>
-                <a th:if="${#sets.contains(session.user.roles, T(com.chuyashkou.hotels_booking.model.Role).USER) &&
-                #lists.size(session.user.roles) == 1}" class="link-flash" th:href="@{/user/hotel-registration}">
+                <a sec:authorize="hasAuthority('0')" th:if="${#lists.size(#authentication.authorities) == 1}"
+                   class="link-flash" th:href="@{/user/hotel-registration}">
                     <p th:text="Register + ' ' + hotel" class="user-menu"></p>
                 </a>
-                <a th:if="${#sets.contains(session.user.roles, T(com.chuyashkou.hotels_booking.model.Role).USER) &&
-                #sets.contains(session.user.roles, T(com.chuyashkou.hotels_booking.model.Role).MANAGER)}"
-                   class="link-flash"
-                   th:href="@{/manager/update-hotel-data}">
+                <a sec:authorize="hasAuthority('1')" class="link-flash" th:href="@{/manager/update-hotel-data}">
                     <p th:text="Manage + ' ' + hotel" class="user-menu"></p>
                 </a>
-                <a th:if="${#sets.contains(session.user.roles, T(com.chuyashkou.hotels_booking.model.Role).USER) &&
-                #sets.contains(session.user.roles, T(com.chuyashkou.hotels_booking.model.Role).ADMIN)}"
-                   class="link-flash"
-                   href="#">
+                <a sec:authorize="hasAuthority('2')" class="link-flash" th:href="@{/admin/all-users}">
                     <p th:text="Admin + ' ' + dashboard" class="user-menu"></p>
                 </a>
                 <form action="#" class="logout-form" th:action="@{/logout}" method="post">

@@ -18,7 +18,7 @@
             <div class="container-fluid manage-result-con">
                 <div class="container-fluid inner-manage-result-con">
                     <form th:action="@{/user/security}" th:method="post">
-                        <input type="hidden" name="command" value="update_password">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
                         <h4>Enter new password:</h4>
                         <div class="row">
                             <div class="col-6">
@@ -44,10 +44,6 @@
                         </div>
                         <button type="submit" class="btn btn-primary"><span class="iconify" data-icon="heroicons-solid:save-as"></span>
                             Save password</button>
-                            <div class="alert alert-danger alert-password-update" role="alert" th:if="${saveError}">
-                                <span class="iconify" data-icon="akar-icons:triangle-alert"></span> Update password error!
-                            </div>
-
                             <div class="alert alert-success alert-password-update" role="alert" th:if="${saveSuccess}">
                                 <span class="iconify" data-icon="clarity:success-standard-line"></span>  Password update successful!
                             </div>

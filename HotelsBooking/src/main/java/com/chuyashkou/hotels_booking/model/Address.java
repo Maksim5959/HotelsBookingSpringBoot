@@ -2,9 +2,11 @@ package com.chuyashkou.hotels_booking.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -33,4 +35,8 @@ public class Address {
     private String building;
 
     private String apartmentNumber;
+
+    public Address(Long id) {
+        this.id = id;
+    }
 }

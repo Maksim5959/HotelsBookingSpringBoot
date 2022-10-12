@@ -16,6 +16,7 @@
 <div class="container-flex top-hotel-registration-container">
 
     <form th:action="@{/user/hotel-registration}" th:method="post" th:object="${hotel}">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
         <div class="row login-form">
             <div class="col-12 col-lg-4 inner-form2">
                 <!--            animation-->
@@ -29,32 +30,32 @@
                 <h4 class="email">Personal data:</h4>
                 <div class="form-floating">
                     <input type="email" name="email" class="form-control email" id="floatingInput1"
-                           placeholder="name@example.com" th:value="${session.user.email}"
+                           placeholder="name@example.com" th:value="${user.email}"
                            disabled required>
                     <label for="floatingInput1">Email address*</label>
                 </div>
                 <div class="form-floating">
                     <input type="text" name="firstName" class="form-control info" id="firstname1"
                            placeholder="Firstname"
-                           th:value="${session.user.firstName}" disabled required>
+                           th:value="${user.firstName}" disabled required>
                     <label for="firstname1">Firstname*</label>
                 </div>
                 <div class="form-floating">
                     <input type="text" name="lastName" class="form-control info" id="lastname1"
                            placeholder="Lastname"
-                           th:value="${session.user.lastName}" disabled required>
+                           th:value="${user.lastName}" disabled required>
                     <label for="lastname1">Lastname*</label>
                 </div>
                 <div class="gender info">
                     <div class="form-check form-check-inline">
                         <input name="gender" class="form-check-input" type="radio" id="inlineCheckbox11"
-                               th:value="${session.user.gender}"
+                               th:value="${user.gender}"
                                checked disabled required>
                         <label class="form-check-label" for="inlineCheckbox11">Male*</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input name="gender" class="form-check-input" type="radio" id="inlineCheckbox21"
-                               th:value="${session.user.gender}"
+                               th:value="${user.gender}"
                                disabled required>
                         <label class="form-check-label" for="inlineCheckbox21">Female*</label>
                     </div>
@@ -62,14 +63,14 @@
                 <div class="form-floating">
                     <input name="dateOfBirth" type="date" class="form-control info" id="birthday1"
                            placeholder="Birthday"
-                           th:value="${session.user.dateOfBirth}" disabled required>
+                           th:value="${user.dateOfBirth}" disabled required>
                     <label for="birthday1">Date of birth*</label>
                 </div>
                 <div class="form-floating">
                     <input name="phoneNumber" type="tel" id="Phone1" class="form-control info"
                            placeholder="+375290000000"
                            pattern="^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$"
-                           th:value="${session.user.phoneNumber}" disabled required>
+                           th:value="${user.phoneNumber}" disabled required>
                     <label for="Phone1">Phone number</label>
                 </div>
             </div>

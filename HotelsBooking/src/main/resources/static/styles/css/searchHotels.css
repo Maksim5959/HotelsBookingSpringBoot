@@ -1,16 +1,7 @@
-#btn-reg-hot {
+.btn-group{
+    max-width: 98%;
     margin-left: 10px;
 }
-
-#btn-reg {
-    margin-left: 10px;
-}
-
-#btn-log {
-    margin-left: 10px;
-}
-
-/* -------------------- */
 
 .search {
     background-color: #fff;
@@ -45,7 +36,7 @@
 }
 
 .search-group{
-    margin-top: 144px;
+    margin-top: 70px;
 }
 
 .search-inner{

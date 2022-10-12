@@ -2,6 +2,7 @@ package com.chuyashkou.hotels_booking.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -34,10 +35,14 @@ public class Hotel {
     @OneToOne(cascade = CascadeType.ALL, optional = false)
     private Address address;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY)
+    @EqualsAndHashCode.Exclude
     private User user;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "hotel_id")
     private Set<Apartment> apartments;
+
+    @Transient
+    private Double minPrice;
 }
